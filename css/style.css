@@ -1,0 +1,226 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items : center;
+    border-top:1px black solid;
+    border-bottom:1px solid black;
+    margin : 1em;
+}
+
+body{
+    margin:1em;
+    background-color:palegoldenrod;
+}
+
+.a{
+    text-decoration:none;
+    color : black;
+}
+
+.slider{
+    width:1330px;
+    height:578px;
+    overflow:hidden;
+}
+
+.slides{
+    width:500%;
+    height:578px;
+    display:flex;
+}
+
+.slides input{
+    display:none;
+}
+
+.slide{
+    width:20%;
+    transition:1s;
+}
+
+.slide img{
+    width:1330px;
+    height:578px;
+}
+
+.nav-manual{
+    position:absolute;
+    width: 1330px;
+    margin-top:-40px;
+    display:flex;
+    justify-content:center;
+}
+
+.manual-btn{
+    border:2px solid cyan;
+    padding:5px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right:40px;
+}
+
+.manual-btn:hover{
+    background-color:red;
+}
+
+#radio1:checked ~ .first{
+    margin-left:0;
+}
+
+#radio2:checked ~ .first{
+    margin-left:-20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+.nav-auto{
+    position:absolute;
+    display:flex;
+    width:1330px;
+    justify-content: center;
+    margin-top:538px;
+}
+
+.nav-auto div{
+    border:2px solid cyan;
+    padding:5px;
+    border-radius:10px;
+    transition:1s;
+}
+
+.nav-auto div:not(:last-child){
+    margin-right:40px;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1{
+    background-color:grey;
+}
+
+#radio2:checked ~ .nav-auto .auto-btn2{
+    background-color:grey;
+}
+
+#radio3:checked ~ .nav-auto .auto-btn3{
+    background-color :grey;
+}
+
+@media only screen and (max-width:600px){
+    .slider{width:590px; height:578px; display:none; overflow:hidden}
+    .slide imafe{width:590px;}
+    .slides{width:590px;height:578px;}
+    .nav-auto{width:590px;}
+    .nav-manual{width:590px;}
+}
+
+.borderafterslide{
+    border-bottom:1px solid black;
+}
+
+.logo{
+    height : 2em ;
+    margin : 1em;
+}
+
+.nav-bar{
+    display : flex;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.nav-item{
+    padding: 5px 1em;
+    width : 80px;
+    border-right : 1px solid grey;
+    text-align : center ;
+    cursor: pointer;
+}
+
+.nav-item:hover{
+    background-color:gainsboro;
+    border: 1px solid grey;
+}
+
+.nav-bar:last-child{
+    border-right:none;
+
+}
+
+.wrapper {
+    display:flex;
+}
+
+.headquarters{
+    border-top:1px solid black;
+}
+
+.headquarters-image{
+    border : 1px solid grey;
+    border-radius : 50%;
+    width : 8em;
+    height : 8em;
+}
+
+.headquarters-image-container{
+    display : flex;
+    flex-direction:column;
+    align-items: center;
+    margin : 0 1em;
+}
+
+.message-us{
+    border-top:1px black solid;
+}
+
+#kirim {
+    padding:0.5em;
+    width : 150px;
+    border:none;
+    cursor:pointer; 
+}
+
+.hasil-data{
+    border:1px black solid;
+    margin : 1em;
+    padding:1em;
+    width : 500px;
+    height:160px;
+    justify-content: space-between;
+}
+
+.form-output{
+    justify-content: space-between;
+    align-items:right;
+    border : 1px black solid;
+    padding : 1em;
+    margin:1em;
+}
+
+footer{
+    border-top:1px black solid;
+    text-align:right;
+}
+
+@media only screen and (max-width : 600px){
+    .head-wrapper{
+        flex-direction: column;
+    }
+
+    .nav-item{
+        border-right:none;
+    }
+    .nav-bar{
+        width: 100%;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .logo{
+        margin-bottom: 1em;
+    }
+}
