@@ -4,9 +4,155 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Company Profile</title>
+    <link rel = "stylesheet" href = "css/style.css">
 </head>
 <body>
-    
+    <header class = "head-wrapper">
+        <img src  = "asset/plane.png" alt = "FlyU" class = "logo">
+        <div class = "nav-bar">
+            <div class="nav-item"><a href = "index.html" class = "a">Home</a></div>
+            <div class="nav-item"> <a href = "profile.html"class = "a">Profile</a> </div>
+            <div class="nav-item"><a href = "index.html" class = "a">Portofolio</a></div>
+            <div class="nav-item"><a href = "#bottom" class = "a">Message Us</a></div>
+        </div>
+    </header>
+
+    <div id = "hero-section" class = "hero">
+        <h1> Hi, <span id = "user-name"></span>. Welcome To FlyU Indonesia</h1>
+        <br>
+        <script src = "js/script.js"></script>
+        <br>
+        <div class = "slider">
+            <div class = "slides">
+                <input type = "radio" name = "radio-btn" id ="radio1">
+                <input type = "radio" name = "radio-btn" id ="radio2">
+                <input type = "radio" name = "radio-btn" id ="radio3">
+
+                <div class = "slide first">
+                    <img src ="asset/one.jpg">
+                </div>
+                <div class = "slide">
+                    <img src ="asset/two.jpg">
+                </div>
+                <div class = "slide">
+                    <img src ="asset/three.jpg">
+                </div>
+                <div class = "nav-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                </div>
+            </div>
+            <div class = "nav-manual">
+                <label for = "radio1" class = "manual-btn"></label>
+                <label for = "radio2" class = "manual-btn"></label>
+                <label for = "radio3" class = "manual-btn"></label>
+            </div>
+        </div>
+        <script src = "js/script.js"></script>
+        <br><br>
+        <div class = "borderafterslide"></div>
+    </div>
+
+    <script>
+        var name = prompt("Masukkan Nama Kamu");
+        document.getElementById("user-name").innerText = name;
+    </script>
+
+    <div id = "headquarters-section" class = "headquarters">
+        <h1>Headquarters</h1>
+        <div class = "wrapper">
+        <div class="headquarters-image-container"><div class = "headquarters-image">
+
+        </div>
+        <p> Jakarta </p>
+        </div>
+        <div class="headquarters-image-container"><div class = "headquarters-image"></div>
+        <p> Bandung </p>
+        </div>
+        <div class="headquarters-image-container"><div class = "headquarters-image"></div>
+        <p> Surabaya </p>
+        </div>
+        </div>
+    </div>
+    <div id = "message-us-section" class = "form-section">
+        <h1>Message Us</h1>
+        <form class = "message-form" name = "message-form" onsubmit = "return validateform()">
+            <table>
+                <tr>
+                    <td>Nama</td>
+                    <td>:</td>
+                    <td><input type="text" id = "full-name"></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td>:</td>
+                    <td><input type="date" name = "birth-date"></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td>
+                        <input type="radio" name = "gender" value = "laki-laki">laki-laki</input>
+                        <input type = "radio" name = "gender" value = "perempuan">perempuan</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pesan</td>
+                    <td>:</td>
+                    <td><textarea name = "pesan"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan ="3"><input name = "messages" class = "submit" type ="submit" value = "Submit" onsubmit="PrintAns"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        function validateform(){
+                var name = document.forms["message-form"]["full-name"].value;
+                var birthDate = document.forms["message-form"]["birth-date"].value;
+                var gender = document.forms["message-form"]["gender"].value;
+                var messages = document.forms["message-form"]["messages"].value;
+
+                if (name =="" || birthDate=="" || gender == "" || messages==""){
+                    alert("Tidak boleh ada yang kosong")
+                    return false;
+                }
+                else{
+                    var name = document.forms["message-form"]["full-name"].value;
+                var birthDate = document.forms["message-form"]["birth-date"].value;
+                var gender = document.forms["message-form"]["gender"].value;
+                var messages = document.forms["message-form"]["messages"].value;
+
+                document.getElementById("sender-full-name").innerText = name;
+                document.getElementById("sender-birth-date").innerText = birthDate;
+                document.getElementById("sender-gender").innerText = gender;
+                document.getElementById("sender-messages").innerText = messages;
+
+                
+                }
+                setSenderUI(name, birthDate, gender, messages)
+                return False;
+
+                document.getElementById("sender-full-name").innerText = name;
+                document.getElementById("sender-birth-date").innerText = birthDate;
+                document.getElementById("sender-gender").innerText = gender;
+                document.getElementById("sender-messages").innerText = messages;
+        }
+    </script>
+
+    <div class = "form-output">
+        <p>Nama:<span id = "sender-full-name"></span></p>
+            <p>Tanggal Lahir:<span id ="sender-birth-date"></span></p>
+            <p>Jenis Kelamin:<span id = "sender-gender"></span></p>
+            <p>Pesan:<span id ="sender-messages"></span></p>
+    </div>
+
+    <br>
+    <footer>Created by Darris</footer>
 </body>
+<a name = "bottom"></a>
 </html>
